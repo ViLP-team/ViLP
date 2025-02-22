@@ -1,7 +1,9 @@
 # ViLP
 This repo is the codebase for the paper [Probing Visual Language Priors in VLMs](https://arxiv.org/abs/2501.00569). We explore the visual language priors in VLMs by constructing Question-Image-Answer triplets that deliberately deviate from the training data distribution. Also, we proposed Image-DPO to encourage the model to use more visual inputs.
 
-Please access to our data in [Huggingface](https://huggingface.co/datasets/ViLP/ViLP). 
+Please access ViLP dataset on [Huggingface](https://huggingface.co/datasets/ViLP/ViLP). 
+
+![Dataset Sample](sample.png)
 
 ## Usage
 
