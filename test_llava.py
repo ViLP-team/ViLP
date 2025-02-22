@@ -187,6 +187,9 @@ def main():
     match_array = np.array(matches_details).reshape([-1, 3])
     col_sums = np.mean(match_array, axis=0)
     score_name = "ViLP-F" if not args.without_fact else "ViLP-P"
+    print('\n')
+    print('---')
+    print(f"Model: {args.model_path}")
     print(f"{score_name} Score: {np.mean(col_sums[1:3]):.2f}")
     print(f"{score_name} Prior: {col_sums[0]:.2f}")
     row_sums = np.sum(match_array, axis=1)
