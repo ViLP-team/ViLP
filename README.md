@@ -7,17 +7,18 @@ Please access ViLP dataset on [Huggingface](https://huggingface.co/datasets/ViLP
 
 ## Usage
 
-Our benchmark evaluation does not require the involvement of other LLMs/VLMs due to the design of the single-word output.
+Our benchmark evaluation does not require the involvement of other LLMs/VLMs due to the design of the single-word output. 
 
-In `test_gpt.py`, we provide the evaluation code for the OpenAI model. This can be easily integrated into other VLM inference pipelines.
+We provide the evaluation code for both the LLaVA-v1.5 ([test_llava.py](https://github.com/ViLP-team/ViLP/blob/main/test_llava.py)) and OpenAI models ([test_gpt.py](https://github.com/ViLP-team/ViLP/blob/main/test_gpt.py)). It can be also easily integrated into other VLM inference pipelines. If you encounter any issues while evaluating ViLP, please email our team!
 
-Please download the `test_gpt.py` and `eval_utils.py`, and run with:
+- Please download the `test_llava.py` and `eval_utils.py`, and run with: `python test_gpt.py`.
 
-```python
-python test_gpt.py --api_key 'YOUR-OPENAI-KEY'
-```
+- Please download the `test_gpt.py` and `eval_utils.py`, and run with: `python test_gpt.py --api_key 'YOUR-OPENAI-KEY'`.
 
-The output will be similar to the example below, where Normalized refers to our script that standardizes the single-word output for comparison.
+- As noted in our paper, we evaluate performance in two modes: with the fact included in the question (ViLP-F) and without it (ViLP-P). You can specify the mode by adding the `--without_fact` flag. For example: `python test_gpt.py --without_fact`. 
+
+The output will be similar to the example below, where Normalized refers to our script that standardizes the single-word output for comparison. The script prints the final scores, e.g., `ViLP-F Score: 0.35\n ViLP-F Prior: 0.76`, and saves the output to a JSON file, e.g., `Evaluation results have been saved to 'ViLP_results/ViLP-F_LLaVA-v1.5-7b-ImageDPO.json'`.
+
 
 ```
 Columns in dataset: Index(['question', 'image1', 'answer1', 'image2', 'answer2', 'image3',
