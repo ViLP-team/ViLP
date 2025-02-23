@@ -9,7 +9,7 @@ Please access ViLP dataset on [Huggingface](https://huggingface.co/datasets/ViLP
 
 Our benchmark evaluation does not require the involvement of other LLMs/VLMs due to the design of the single-word output. 
 
-We provide the evaluation code for both the LLaVA-v1.5 ([test_llava.py](https://github.com/ViLP-team/ViLP/blob/main/test_llava.py)) and OpenAI models ([test_gpt.py](https://github.com/ViLP-team/ViLP/blob/main/test_gpt.py)). It can be also easily integrated into other VLM inference pipelines. If you encounter any issues while evaluating ViLP, please email our team!
+We provide the evaluation code for both the LLaVA-v1.5 ([test_llava.py](https://github.com/ViLP-team/ViLP/blob/main/test_llava.py)) and OpenAI models ([test_gpt.py](https://github.com/ViLP-team/ViLP/blob/main/test_gpt.py)). It can be also easily integrated into other VLM inference pipelines. If you encounter any issues while evaluating ViLP, please email our team or leave a issue!
 
 - Please download the `test_llava.py` and `eval_utils.py`, and run with: `python test_gpt.py`.
 
