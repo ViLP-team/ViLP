@@ -86,6 +86,8 @@ def prepare_requests(df, without_fact):
     for i in range(len(df)):
         row = df.iloc[i]
         question = row['question']
+        if without_fact:
+            question = question.split('.')[1].strip()
         image_cols = ['image1', 'image2', 'image3']
         answer_cols = ['answer1', 'answer2', 'answer3']
 
@@ -98,8 +100,7 @@ def prepare_requests(df, without_fact):
             processed_img_base64 = process_image(image_bytes)
 
             gt_results.append(gt_answer)
-            if without_fact:
-                question = question.split('.')[1].strip()
+
 
             question_list.append(question)
 
