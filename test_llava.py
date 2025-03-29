@@ -59,7 +59,9 @@ def run_inference(df, model, tokenizer, image_processor, conv_mode, args):
     print("\nStart inference on ViLP dataset:")
     for i in range(len(df)):
         row = df.iloc[i]
-        question = row["question"]  # e.g., "What is ... ?"
+        question = row["question"]
+        if args.without_fact:
+            question = question.split('.')[1].strip()
         print('---')
 
         # Collect each of the up to 3 images
@@ -75,8 +77,7 @@ def run_inference(df, model, tokenizer, image_processor, conv_mode, args):
             # Construct the question prompt
             # e.g., "Please answer with one word: {question}"
             # we remove the fact and leave question solely for ViLP-P score.
-            if args.without_fact:
-                question = question.split('.')[1].strip()
+
 
             user_prompt = f"Please answer with one word: {question}"
             # Copy a fresh conversation template each time
