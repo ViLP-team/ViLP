@@ -60,6 +60,8 @@ def run_inference(df, model, tokenizer, image_processor, conv_mode, args):
     for i in range(len(df)):
         row = df.iloc[i]
         question = row["question"]
+
+        # we remove the fact and leave question solely for ViLP-P score.   
         if args.without_fact:
             question = question.split('.')[1].strip()
         print('---')
@@ -76,8 +78,6 @@ def run_inference(df, model, tokenizer, image_processor, conv_mode, args):
 
             # Construct the question prompt
             # e.g., "Please answer with one word: {question}"
-            # we remove the fact and leave question solely for ViLP-P score.
-
 
             user_prompt = f"Please answer with one word: {question}"
             # Copy a fresh conversation template each time
