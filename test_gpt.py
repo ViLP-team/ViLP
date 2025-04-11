@@ -86,6 +86,8 @@ def prepare_requests(df, without_fact):
     for i in range(len(df)):
         row = df.iloc[i]
         question = row['question']
+        
+        # we remove the fact and leave question solely for ViLP-P score.  
         if without_fact:
             question = question.split('.')[1].strip()
         image_cols = ['image1', 'image2', 'image3']
