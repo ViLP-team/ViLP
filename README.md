@@ -11,9 +11,10 @@ Our benchmark evaluation does not require the involvement of other LLMs/VLMs due
 
 We provide the evaluation code for both the LLaVA-v1.5 ([test_llava.py](https://github.com/ViLP-team/ViLP/blob/main/test_llava.py)) and OpenAI models ([test_gpt.py](https://github.com/ViLP-team/ViLP/blob/main/test_gpt.py)). It can be also easily integrated into other VLM inference pipelines. If you encounter any issues while evaluating ViLP, please email our team or leave a issue!
 
-- Please download the `test_llava.py` and `eval_utils.py`, and run with: `python test_gpt.py`.
-
 - Please download the `test_gpt.py` and `eval_utils.py`, and run with: `python test_gpt.py --api_key 'YOUR-OPENAI-KEY'`.
+
+- Please download the `test_llava.py` and `eval_utils.py`, and run with: `CUDA_VISIBLE_DEVICES=0 python test_llava.py`.
+
 
 - As noted in our paper, we evaluate performance in two modes: with the fact included in the question (ViLP-F) and without it (ViLP-P). You can specify the mode by adding the `--without_fact` flag. For example: `python test_gpt.py --without_fact`. 
 
